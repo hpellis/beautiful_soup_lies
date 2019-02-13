@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import pandas as pd
 
 
 r = requests.get('https://www.nytimes.com/interactive/2017/06/23/opinion/trumps-lies.html')
@@ -25,4 +26,10 @@ def get_lies():
 
 list_of_lies = get_lies()
 
-print(list_of_lies)    
+print(list_of_lies)
+
+df = pd.DataFrame(list_of_lies, columns=['date', 'lie', 'explanation', 'url'])
+
+print(df.head())
+
+df.to_csv('trump_lies.csv', index=False, encoding='utf-8')
