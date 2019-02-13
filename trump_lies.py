@@ -21,14 +21,8 @@ def get_lies():
         evidence = item.find('a')['href']
         list_of_lies.append((date, lie, explanation, evidence))
     
-#    print(list_of_lies)
     return list_of_lies
 
 list_of_lies = get_lies()
 
-print(list_of_lies)
-
-#print(list_of_lies)
-
-    
-    
+print(list_of_lies)    
